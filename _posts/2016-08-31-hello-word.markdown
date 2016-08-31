@@ -81,8 +81,8 @@ Loss函数为：
 
 ## 参考资料
 
-    https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/
-    http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/
-    http://math.stackexchange.com/questions/945871/derivative-of-softmax-loss-function
-    http://cs231n.github.io/optimization-1/
-    http://neuralnetworksanddeeplearning.com/chap2.html
+* https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/
+* http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/
+* http://math.stackexchange.com/questions/945871/derivative-of-softmax-loss-function
+* http://cs231n.github.io/optimization-1/
+* http://neuralnetworksanddeeplearning.com/chap2.html
