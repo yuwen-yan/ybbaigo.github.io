@@ -44,12 +44,14 @@ Loss函数为：
 
 模型训练采用**Backpropagation**算法，其中**Backwards**过程采用**Mini-batch gradient descent**算法：
 
-    # Vanilla Minibatch Gradient Descent
+``` python
+# Vanilla Minibatch Gradient Descent
 
-    while True:
-        data_batch = sample_training_data(data, 256) # sample 256 examples
-        weights_grad = evaluate_gradient(loss_fun, data_batch, weights)
-        weights += - step_size * weights_grad # perform parameter update
+while True:
+    data_batch = sample_training_data(data, 256) # sample 256 examples
+    weights_grad = evaluate_gradient(loss_fun, data_batch, weights)
+    weights += - step_size * weights_grad # perform parameter update
+```
 
 训练过程中涉及到的偏导计算结果如下：
 
