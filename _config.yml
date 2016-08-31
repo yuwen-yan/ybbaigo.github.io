@@ -1,8 +1,8 @@
 excerpt_separator: ""
-pygments: true
+pygments: false
 markdown: kramdown
 url: http://ybbaigo.github.io
 title: Seven Blue
-tagline: A log of everyday life
-description: My awesome new site
+tagline: ''
+description: ''
 paginate: 5
