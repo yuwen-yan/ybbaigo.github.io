@@ -3,7 +3,7 @@ published: true
 title: Elastic Search安装与优化
 layout: post
 ---
-##Installation
+## Installation
 
 Install OpenJDK 8 on 14.04 LTS
 
