@@ -117,10 +117,13 @@ There is another reason to not allocate enormous heaps to Elasticsearch. As it t
 ## Reference
 
 Basic Concepts
+
 > https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html
 
 Production deployment, hardware
+
 > https://www.elastic.co/guide/en/elasticsearch/guide/current/hardware.html
 
 When do you start additional Elasticsearch nodes
+
 > http://stackoverflow.com/questions/12409438/when-do-you-start-additional-elasticsearch-nodes
