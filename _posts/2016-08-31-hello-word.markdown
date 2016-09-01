@@ -1,6 +1,6 @@
 ---
 published: true
-title: 聊聊神经网络——神经网络模型、训练、实现
+title: 神经网络模型、训练、实现
 layout: post
 ---
 ## 模型定义
