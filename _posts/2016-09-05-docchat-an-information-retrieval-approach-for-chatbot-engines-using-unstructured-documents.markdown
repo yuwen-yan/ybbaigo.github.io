@@ -3,7 +3,6 @@ published: true
 title: DocChat - An Information Retrieval Approach for Chatbot Engines Using Unstructured Documents
 layout: post
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 [PDF](http://aclweb.org/anthology/P16-1049)
 
