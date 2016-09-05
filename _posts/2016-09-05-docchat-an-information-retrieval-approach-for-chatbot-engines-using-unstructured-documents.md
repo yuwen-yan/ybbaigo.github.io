@@ -19,7 +19,7 @@ $$
 * **Response Ranking**, which ranks all response candidates in C and selects the most possible response candidate as $$\widehat{S}$$
 
 $$
-\widehat{S} = \argmaxRank_{S  \epsilon C}_{(S, Q)}
+\widehat{S} = \argmaxRank_{S  \epsilon C}(S, Q)
 $$
 
 * **Response Triggering**, which decides whether it is confident enough to response Q using $$\widehat{S}$$
