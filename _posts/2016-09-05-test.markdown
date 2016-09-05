@@ -1,6 +1,6 @@
 ---
 published: true
 title: Test
-layout: Paper Notes
+layout: page
 ---
 Test
