@@ -10,11 +10,20 @@ Most current chatbot engines are designed to reply to user utterances based on e
 
 Three steps:
 
-* response retrieval, which retrieves response candidates C from D based on Q
+* **Response Retrieval**, which retrieves response candidates _C_ from _D_ based on _Q_
 
 $$
 C = Retrieve(Q, D)
 $$
 
-* response ranking, which ranks all response candidates in C and selects the most possible response candidate as $$\hat{S}$$
-* response triggering, which decides whether it is confident enough to response Q using Sˆ
+* **Response Ranking**, which ranks all response candidates in C and selects the most possible response candidate as $$\widehat{S}$$
+
+$$
+\widehat{S} = \argmaxRank_{S  \epsilon C}_{(S, Q)}
+$$
+
+* **Response Triggering**, which decides whether it is confident enough to response Q using $$\widehat{S}$$
+
+$$
+I = Trigger( \widehat{S}, Q)
+$$
