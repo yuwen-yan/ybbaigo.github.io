@@ -8,7 +8,7 @@ layout: post
 
 
 
-##Abstract
+## Abstract
 
 Understanding short texts is crucial to many applications, but challenges abound. First, short texts do not always observe the syntax of a written language. As a result, traditional natural language processing methods cannot be easily applied. Second, short texts usually do not contain sufficient statistical signals to support many state-of-the-art approaches for text processing such as topic modeling. Third, short texts are usually more ambiguous. We argue that knowledge is needed in order to better understand short texts. **In this work, we use lexicalsemantic knowledge provided by a well-known semantic network for short text understanding. Our knowledge-intensive approach disrupts traditional methods for tasks such as text segmentation, part-of-speech tagging, and concept labeling, in the sense that we focus on semantics in all these tasks**. We conduct a comprehensive performance evaluation on real-life data. The results show that knowledge is indispensable for short text understanding, and our knowledge-intensive approaches are effective in harvesting semantics of short texts.
 
@@ -20,7 +20,7 @@ Preliminary Concepts
 * Definition 4 (type and typed-term): A term can be mapped to multiple types including verb, adjective, attribute, concept, and instance.
 * Definition 5 (concept vector and concept cluster vector):During concept labeling, we map a typed-term to a concept vector, or map a typed-term to a concept cluster vector.
 
-##Notes
+## Notes
 
 整个系统依赖的数据信息主要分为：
 
