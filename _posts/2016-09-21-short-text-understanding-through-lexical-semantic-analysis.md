@@ -1,6 +1,6 @@
 ---
 published: true
-title: DocChat - An Information Retrieval Approach for Chatbot Engines Using Unstructured Documents
+title: Short Text Understanding Through Lexical-Semantic Analysis
 layout: post
 ---
 
