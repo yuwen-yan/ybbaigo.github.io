@@ -25,7 +25,7 @@ Record Linkage即在不同数据集中找出同一个实体的描述记录（如
 在知识图谱实体融合过程中，基本问题是判断两个实体是否可以融合。假设两个知识图谱所包含的实体数目分别为n1和n2，那么需要判断的实体对数目为n1 * n2，当两个知识图谱实体数目在千万规模时，无法对所有可能的实体对进行计算，所以基本算法框架是先对所有的实体进行Blocking操作，然后对每个Blocking内的每一对实体进行判断，是典型的MapReduce架构。类似设计见[这里](https://github.com/datamade/dedupe)，[这里](https://pdfs.semanticscholar.org/990f/9aa328df4c3c6503d6b7815a1ea865b9bfd1.pdf)，[这里](http://www.umiacs.umd.edu/~getoor/Tutorials/ER_VLDB2012.pdf)。
 
 <p align="center">
-<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-06-record-linkage.png?raw=true" width="866" height="374"/>
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-06-record-linkage.png?raw=true" width="684" height="295"/>
 </p>
 
 ## Map Stage
