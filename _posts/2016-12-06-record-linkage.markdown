@@ -7,7 +7,7 @@ layout: post
 Record Linkage即在不同数据集中找出同一个实体的描述记录（如下所示）。主要目的是对不同数据源中的实体信息进行整合，形成更加全面的实体信息。
 
 <p align="center">
-<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-01-entity-resolution-tutorial-lise-getoor-reference-table.png?raw=true"/>
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-01-entity-resolution-tutorial-lise-getoor-reference-table.png?raw=true" width="684" height="374"/>
 </p>
 
 ## Data Preprocessing
@@ -25,7 +25,7 @@ Record Linkage即在不同数据集中找出同一个实体的描述记录（如
 在知识图谱实体融合过程中，基本问题是判断两个实体是否可以融合。假设两个知识图谱所包含的实体数目分别为n1和n2，那么需要判断的实体对数目为n1 * n2，当两个知识图谱实体数目在千万规模时，无法对所有可能的实体对进行计算，所以基本算法框架是先对所有的实体进行Blocking操作，然后对每个Blocking内的每一对实体进行判断，是典型的MapReduce架构。类似设计见[这里](https://github.com/datamade/dedupe)，[这里](https://pdfs.semanticscholar.org/990f/9aa328df4c3c6503d6b7815a1ea865b9bfd1.pdf)，[这里](http://www.umiacs.umd.edu/~getoor/Tutorials/ER_VLDB2012.pdf)。
 
 <p align="center">
-<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-06-record-linkage.png?raw=true"/>
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-06-record-linkage.png?raw=true" width="866" height="374"/>
 </p>
 
 ## Map Stage
@@ -49,7 +49,7 @@ Record Linkage即在不同数据集中找出同一个实体的描述记录（如
 对于Load Balance问题，[这篇文章](http://dbs.uni-leipzig.de/file/ICDE12conffull_088.pdf)给出了详细的策略，基本框架是两次Map-Reduce，第一次Map-Reduce统计基于Partition函数计算结果后每个block中实体数目的分布，第二次Map-Reduce再根据该分布再进行二次Partition，具体流程如下：
 
 <p align="center">
-<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-06-record-linkage-load-balance.png?raw=true"/>
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-06-record-linkage-load-balance.png?raw=true" width="684" height="374"/>
 </p>
 
 ## Reduce Stage
@@ -65,7 +65,7 @@ Deterministic record linkage即基于规则的实体融合方法，在具体操�
 Probabilistic record linkage即基于概率的实体融合方法，基本流程是先进行相似度的计算生成特征，再通过机器学习方法来进行判断。从组成模块上来看，主要分为训练模块和预测模块。
 
 <p align="center">
-<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-06-record-linkage-learning.png?raw=true"/>
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2016-12-06-record-linkage-learning.png?raw=true" width="684" height="374"/>
 </p>
 
 关于相似度计算，[这个](https://github.com/datamade/dedupe)，[这个](http://www.umiacs.umd.edu/~getoor/Tutorials/ER_VLDB2012.pdf)，[这个](http://www.cs.utexas.edu/~ml/papers/marlin-dissertation-06.pdf)都有提到，比如基于布尔值的判断；编辑距离，Levenstein, Smith‐Waterman, Affine；基于set的相似度计算，Jaccard, Dice；基于vector的相似度计算，Cosine similarity, TFIDF；基于alignment的相似度计算，Jaro‐Winkler, Soft‐TFIDF, Monge‐Elkan；基于phonetic的相似度计算，Soundex；基于翻译模型的相似度计算；基于数值的相似度计算；领域特定相似度计算等等。而具体应用中，基于alignment的相似度适合处理名字缩写、别名，基于set、vector的相似度计算适合处理普通文本，如tweets等。
