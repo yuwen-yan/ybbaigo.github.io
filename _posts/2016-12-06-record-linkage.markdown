@@ -1,6 +1,6 @@
 ---
 published: true
-title: Record Linkage, Entity Resolution
+title: 实体融合、实体链接相关技术调研
 layout: post
 ---
 
