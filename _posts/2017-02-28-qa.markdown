@@ -6,7 +6,7 @@ layout: post
 
 ## Introduction
 
-### Categories of Questions
+Categories of Questions
 
 * Factoid: who is the president of USA?
   * Simple Question. One that can be answered with single evidence. E.g. Who wrote the book of Beijing Folding
@@ -19,7 +19,7 @@ layout: post
 * Opinion: how do you think about Trump?
 
 
-### New and Open Problems in Question Answering
+New and Open Problems in Question Answering
 
 * Question Answering from Knowledge Base
   * Synonymy and polysemy of terms in question and knowledge base items
@@ -42,39 +42,39 @@ layout: post
 
 ## System
 
-### Factoid Question Answering System
+Factoid Question Answering System
 
 <p align="center">
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lihang-factoid.png?raw=true" width="684" height="374"/>
 </p>
 
-### Community Question Answering System
+Community Question Answering System
 
 <p align="center">
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lihang-community.png?raw=true" width="684" height="374"/>
 </p>
 
-### CFO：首先通过sequence labelling方法找出focus短语，通过TransE的方法把知识图谱中的实体与关系都转化成Embedding。然后通过Stacked bi-directional GRU生成问题的Embedding，分别计算句子的Embedding与句子中出现的实体／关系的距离来最终生成答案。
+CFO：首先通过sequence labelling方法找出focus短语，通过TransE的方法把知识图谱中的实体与关系都转化成Embedding。然后通过Stacked bi-directional GRU生成问题的Embedding，分别计算句子的Embedding与句子中出现的实体／关系的距离来最终生成答案。
 <p align="center">
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lilei-cfo.png?raw=true" width="684" height="374"/>
 </p>
 
-### KBQA：基本思路是利用问题模板来明确用户意图。首先识别问题中的实体，然后根据问题和实体寻找可能对应的模板，通过模板推测出其对应的用户意图，最终转化成知识图谱查询。
+KBQA：基本思路是利用问题模板来明确用户意图。首先识别问题中的实体，然后根据问题和实体寻找可能对应的模板，通过模板推测出其对应的用户意图，最终转化成知识图谱查询。
 <p align="center">
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lilei-kbqa.png?raw=true" width="684" height="374"/>
 </p>
 
-### GenQA：首先将query和知识图谱中的triple转化成embedding，通过query word生成triple候选，通过CNN的方法计算query与triple候选的相似度并选择最匹配的triple，最后基于生成模型生成最终的答案。
+GenQA：首先将query和知识图谱中的triple转化成embedding，通过query word生成triple候选，通过CNN的方法计算query与triple候选的相似度并选择最匹配的triple，最后基于生成模型生成最终的答案。
 <p align="center">
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lihang-genqa.png?raw=true" width="684" height="374"/>
 </p>
 
-### QA from Relational Database：基于关系型数据库的问答系统，首先将数据库中的entry转化成table embedding，将query也转化成embedding，然后基于Memory Network类似的思路对逐步将query转化成关系型数据库查询。
+QA from Relational Database：基于关系型数据库的问答系统，首先将数据库中的entry转化成table embedding，将query也转化成embedding，然后基于Memory Network类似的思路对逐步将query转化成关系型数据库查询。
 <p align="center">
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lihang-db.png?raw=true" width="684" height="374"/>
 </p>
 
-### QnA Miner：基于半结构化和非结构化数据FAQ挖掘流程
+QnA Miner：基于半结构化和非结构化数据FAQ挖掘流程
 
 <p align="center">
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-ms-qna.png?raw=true" width="684" height="374"/>
