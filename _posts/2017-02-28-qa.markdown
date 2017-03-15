@@ -4,9 +4,9 @@ title: 近几次讲座相关知识整理 - 问答系统
 layout: post
 ---
 
-## Introduction
+## 1. 问题分类
 
-Categories of Questions
+针对问题的分类
 
 * Factoid: who is the president of USA?
   * Simple Question. One that can be answered with single evidence. E.g. Who wrote the book of Beijing Folding
@@ -18,29 +18,9 @@ Categories of Questions
 * Causal: why is it dark at night
 * Opinion: how do you think about Trump?
 
+## 2. 基于不同数据形式的问答
 
-New and Open Problems in Question Answering
-
-* Question Answering from Knowledge Base
-  * Synonymy and polysemy of terms in question and knowledge base items
-  * Complicated structure of question and knowledge base
-  * Complicated matching between question and knowledge base items
-* Generative Question Answering
-  * Generating answer in more appropriate way according to question
-* Robust Question Answering
-  * AI systems must produce accurate confidence values. Should “abstain” when they are uncertain
-  * AI systems should explain their reasoning
-  * AI systems should be robust to incorrect design assumption
-  * We need verification and validation methodologies for AI systems
-* Interactive Question Answering
-  * Understanding intent of user
-  * Evaluation of retrieval result
-  * Mangement of dialogue, e.g., “Where is it?”
-* Question Answering from Multiple Sources
-* Inference in Question Answering
-
-
-## System
+### 2.1 传统问答系统基本架构
 
 Factoid Question Answering System
 
@@ -53,6 +33,18 @@ Community Question Answering System
 <p align="center">
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lihang-community.png?raw=true" width="684" height="374"/>
 </p>
+
+### 2.2 基于结构化数据的问答（知识图谱、数据库）
+
+#### 2.2.1 主要问题
+
+##### 如何匹配自然语言问题与结构化的知识图谱triple，包括问句句式变换、实体别名处理等。
+  * Embedding，将问题、triple都映射成向量进行匹配。
+
+##### 如何根据问题和匹配到的triple生成自然语言答案。
+  * 基于RNN的生成模型，类似seq2seq的decoding过程。
+
+#### 2.2.2 相关模型
 
 CFO：首先通过sequence labelling方法找出focus短语，通过TransE的方法把知识图谱中的实体与关系都转化成Embedding。然后通过Stacked bi-directional GRU生成问题的Embedding，分别计算句子的Embedding与句子中出现的实体／关系的距离来最终生成答案。
 <p align="center">
@@ -74,14 +66,97 @@ QA from Relational Database：基于关系型数据库的问答系统，首先�
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lihang-db.png?raw=true" width="684" height="374"/>
 </p>
 
+### 2.3 基于FAQ的问答
+
+#### 2.3.1 主要问题
+
+##### 如何从半结构化/无结构化的数据中挖掘FAQ。
+  * QnA Miner，采用机器与人工相结合的半自动方法来解决。
+
+##### 如何匹配问题与答案。
+  * 经典的Ranking问题，deeper model。
+
+#### 2.3.2 相关模型
+
 QnA Miner：基于半结构化和非结构化数据FAQ挖掘流程
 
 <p align="center">
 <img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-ms-qna.png?raw=true" width="684" height="374"/>
 </p>
 
+百度搜索排序框架，基于深度学习来计算query和文本语义关联。
+<p align="center">
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-baidu-matching.png?raw=true" width="684" height="374"/>
+</p>
 
-## References
+Convolutional Neural Tensor Network Architecture for Community-based Question Answering：基于CNN端到端的问题和答案匹配模型。
+
+<p align="center">
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-qiu-cnn.png?raw=true" width="684" height="374"/>
+</p>
+
+### 2.4 基于无结构文档的问答
+
+#### 2.4.1 主要问题
+
+##### 如何从冗余信息中找到与问题相关的片段，进而返回准确的答案。
+  * Attention-over-attention
+
+#### 2.4.2 相关模型
+
+
+Attention-over-attention neural networks for reading comprehension：从文档中寻找问题的答案，采用了Attention-over-attention的机制。
+
+<p align="center">
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-qiu-attention.png?raw=true" width="684" height="374"/>
+</p>
+
+### 2.5 基于事实的推理问答
+
+
+#### 2.5.1 主要问题
+
+###### 如何基于自然语言的事实与问题进行推理建模。
+  * 外部记忆，分步进行推理
+
+#### 2.5.2 相关模型
+
+Memory Network
+
+<p align="center">
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lv-memory-network.png?raw=true" width="684" height="374"/>
+</p>
+
+Dynamic Memory Network
+
+<p align="center">
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lv-dynamic-memory-network.png?raw=true" width="684" height="374"/>
+</p>
+
+Towards Neural Network-based Reasoning
+<p align="center">
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lv-neural-reasoner.png?raw=true" width="684" height="374"/>
+</p>
+
+
+## 3. 其他问题
+
+##### 如何将基于不同数据的问答系统进行整合
+  * 相对而言是一个工程方面的问题。
+
+##### 如何解决知之为知之不知为不知
+* Robust Question Answering
+  * AI systems must produce accurate confidence values. Should “abstain” when they are uncertain
+  * AI systems should explain their reasoning
+  * AI systems should be robust to incorrect design assumption
+  * We need verification and validation methodologies for AI systems
+
+<p align="center">
+<img src="https://github.com/ybbaigo/ybbaigo.github.io/blob/master/_imgs/2017-02-28-qa-lihang-robust.png?raw=true" width="684" height="374"/>
+</p>
+
+
+## 4. 引用
 
 > [百度在NLP领域都做了什么？](http://www.toutiao.com/a6385003116400673026/?tt_from=weixin&utm_campaign=client_share&app=news_article_social&utm_source=weixin&iid=7573988756&utm_medium=toutiao_ios&wxshare_count=1)
 
@@ -104,3 +179,7 @@ QnA Miner：基于半结构化和非结构化数据FAQ挖掘流程
 > [QnA Miner](https://www.microsoft.com/en-us/research/project/qna-miner/)
 
 Yan Jun老师在知识图谱研讨会的报告
+
+> [Recent Progress in Deep Learning for  Natural Language Processing](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwje1rDa-LvSAhWqhVQKHQE9CaMQFgghMAA&url=http%3A%2F%2Fwww.hangli-hl.com%2Fuploads%2F3%2F4%2F4%2F6%2F34465961%2Fnaacl_tutorial_version2.2.pdf&usg=AFQjCNESKZLperzYxPM59XPwnVo74QvcaA&sig2=MUE72P-5pv3z7RF7GaWETg)
+
+Zhengdong Lu老师的报告
